@@ -1,5 +1,8 @@
+import Header from "@/components/header";
 import "./globals.css";
 import { Inter } from 'next/font/google'
+import { ClerkProvider } from "@clerk/nextjs";
+import Image from "next/image";
 export const metadata = {
   title: "MindFlow",
   description: "A journalling app",
@@ -7,10 +10,11 @@ export const metadata = {
 const inter = Inter({ subsets: ['latin'] })
 export default function RootLayout({ children }) {
   return (
+    <ClerkProvider>
     <html lang="en">
       <body
         className={`${inter.className}`}>
-          {/* header */}
+        <Header/>
         {/* Background Image */}
         <div className="inset-0 bg-[url('/journal_bg.jpg')] opacity-50 fixed -z-10" />
         <main className="min-h-screen">{children}</main>
@@ -20,5 +24,6 @@ export default function RootLayout({ children }) {
         </footer>
       </body>
     </html>
+    </ClerkProvider>
   );
 }
