@@ -1,6 +1,6 @@
-"useclient"
+"use client"
 import { UserButton } from '@clerk/nextjs'
-import { ChartNoAxesGanttIcon } from 'lucide-react';
+import { ChartNoAxesGanttIcon, MenuIcon } from 'lucide-react';
 import React from 'react'
 const UserMenu = () => {
   return (
@@ -13,7 +13,7 @@ const UserMenu = () => {
     <UserButton.MenuItems>
         <UserButton.Link
         label='Dashboard'
-        labelIcon = {<ChartNoAxesGanttIcon size={14}/>}
+        labelIcon = {<MenuIcon size={14}/>}
         href='dashboard'
         />
     <UserButton.Action label="manageAccount"/>
