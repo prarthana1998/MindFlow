@@ -1,4 +1,4 @@
-import { revalidateTag, unstable_cache } from "next/cache";
+import { unstable_cache } from "next/cache";
 export const getDailyPrompt = unstable_cache(
 
     async() => {
@@ -14,7 +14,7 @@ export const getDailyPrompt = unstable_cache(
                 success: false,
                 data: "What's on your mind today?",
               };
-        }x
+        }
 
     },["daily-quote"],
     {
