@@ -6,15 +6,16 @@ import { SignedIn, SignedOut, SignInButton, UserButton } from "@clerk/nextjs";
 import { Button } from './ui/button';
 import UserMenu from './user-menu';
 import { FolderOpen, SquarePen } from 'lucide-react';
-// import { useState, useEffect } from 'react'
-//
-const Header = () => {
-  return <header className="container">
-    <nav className="py-4 px-4 flex justify-between items-center w-full">
+import { checkUser } from "@/lib/checkUser";
+
+const Header = async() => {
+  await checkUser();
+  return <header className="container mx-auto">
+    <nav className="py-4 flex justify-between items-center w-full">
        <Link href ={"/"}>
        <Image src={"/mindFlow.png"} alt = "MindFlow" height={60} width={100}/>
        </Link>
-       <div className="flex items-center gap-2 ml-auto">
+       <div className="flex items-center gap-4">
        
        <SignedIn>
             <Link href="/dashboard#collections">
