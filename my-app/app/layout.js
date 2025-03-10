@@ -3,9 +3,10 @@ import "./globals.css";
 import { Inter } from 'next/font/google'
 import { ClerkProvider } from "@clerk/nextjs";
 import Image from "next/image";
+import { Toaster } from "@/components/ui/sonner.jsx"
 export const metadata = {
   title: "MindFlow",
-  description: "A journalling app",
+  description: "A journaling app",
 };
 const inter = Inter({ subsets: ['latin'] })
 export default function RootLayout({ children }) {
@@ -15,6 +16,8 @@ export default function RootLayout({ children }) {
       <body
         className={`${inter.className}`}>
         <Header/>
+        <main className="min-h-screen">{children}</main>
+        <Toaster/>
         {/* Background Image */}
         <div className="inset-0 bg-[url('/journal_bg.jpg')] opacity-50 fixed -z-10" />
         <main className="min-h-screen">{children}</main>

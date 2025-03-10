@@ -28,7 +28,7 @@ export default function Journal() {
    
     <div className="container mx-auto px-4 py-8 space-y-8">
       <form onSubmit = {onSubmit}>
-    <h1 className='text-4xl md:text-5xl gradient-title'>What's your story today?</h1>
+    <h1 className='text-4xl md:text-5xl'>What's your story today?</h1>
      {isLoading && <BarLoader color='purple' width ='100%' className="my-4"/>}
      <div className="space-y-2">
           <label className="text-sm font-medium">Title</label>
