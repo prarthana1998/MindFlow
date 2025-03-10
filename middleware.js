@@ -4,7 +4,9 @@ import { NextResponse } from "next/server";
 const isProtectedRoute = createRouteMatcher(['/dashboard(.*)']);
 export default clerkMiddleware(async(auth, req)=>{
   const { userId, redirectToSignIn } = await auth()
+  console.log('Middleware triggered for route:', req.url);
   if(!userId && isProtectedRoute(req)) {
+    console.log('Redirecting to sign-in');
     // Add logic to run if the user does not have the required permissions
 
     return redirectToSignIn()
